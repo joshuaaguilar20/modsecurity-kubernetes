@@ -1,0 +1,8 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', "gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base", '.' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['beta', 'container', 'images', 'add-tag', 'gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base', 'gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base:latest']
+images: ['gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base']
