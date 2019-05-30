@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM marketplace.gcr.io/google/debian9
 
 LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 
