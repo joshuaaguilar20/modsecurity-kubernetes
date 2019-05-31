@@ -3,6 +3,5 @@ steps:
     args: [ 'build', '-t', "gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base", '.' ]
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base']
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta', 'container', 'images', 'add-tag', 'gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base', 'gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base:latest']
+    #Latest  default version is auto added to the tag, also item tagged locally is pushed. 
 images: ['gcr.io/modsecurity-kubernetes/owasp-modsec-httpd-base']
