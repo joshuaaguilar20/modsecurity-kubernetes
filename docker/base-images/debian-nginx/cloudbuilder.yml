@@ -1,0 +1,7 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', "gcr.io/modsecurity-kubernetes/nginx-image", '.' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/modsecurity-kubernetes/nginx-image]
+  - name: 'gcr.io/cloud-builders/gcloud'
+images: ['gcr.io/modsecurity-kubernetes/nginx-image']
